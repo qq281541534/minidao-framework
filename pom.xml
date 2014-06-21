@@ -1,0 +1,149 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.minidao.framework</groupId>
+  <artifactId>minidao-framework</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>minidao-framework</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+  	<aopalliance.version>1.0</aopalliance.version>
+  	<spring.version>3.1.1.RELEASE</spring.version>
+  	<log4j.version>1.2.16</log4j.version>
+  	<commons-lang.version>2.6</commons-lang.version>
+  	<hibernate.common.annotations.version>4.0.1.Final</hibernate.common.annotations.version>
+	<hibernate-core.version>4.2.3.Final</hibernate-core.version>
+	<hibernate-ehcache.version>4.1.0.Final</hibernate-ehcache.version>
+	<hibernate-proxool.version>4.1.0.Final</hibernate-proxool.version>
+	<hibernate-validator.version>4.2.0.Final</hibernate-validator.version>
+	<hibernate-validator-annotation-processor.version>4.1.0.Final</hibernate-validator-annotation-processor.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+    
+    <dependency>
+	    <groupId>aopalliance</groupId>
+	    <artifactId>aopalliance</artifactId>
+	    <version>${aopalliance.version}</version>
+	</dependency>
+	
+	<!-- Spring依赖包   START -->
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-beans</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-context</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-aop</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-tx</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-asm</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-expression</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-aspects</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-core</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-jdbc</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-orm</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-test</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-context-support</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	<!-- Spring依赖包   END -->
+	
+	<!-- Hibernate依赖包  START-->
+	<dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-core</artifactId>
+		<version>${hibernate-core.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-ehcache</artifactId>
+		<version>${hibernate-ehcache.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-proxool</artifactId>
+		<version>${hibernate-proxool.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.hibernate.common</groupId>
+		<artifactId>hibernate-commons-annotations</artifactId>
+		<version>${hibernate.common.annotations.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-validator</artifactId>
+		<version>${hibernate-validator.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-validator-annotation-processor</artifactId>
+		<version>${hibernate-validator-annotation-processor.version}</version>
+	</dependency>
+	
+	<!-- Hibernate依赖包   END-->
+	
+	<!-- log4j依赖包  START -->
+	<dependency>
+		<groupId>log4j</groupId>
+		<artifactId>log4j</artifactId>
+		<version>${log4j.version}</version>
+	</dependency>
+	<!-- log4j依赖包   END -->
+	
+	<dependency>
+		<groupId>commons-lang</groupId>
+		<artifactId>commons-lang</artifactId>
+		<version>${commons-lang.version}</version>
+	</dependency>
+	
+    
+  </dependencies>
+</project>
