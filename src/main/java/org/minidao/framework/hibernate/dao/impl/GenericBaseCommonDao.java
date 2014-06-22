@@ -17,7 +17,7 @@ import org.springframework.util.Assert;
 
 /**   
  *  
- * @Description: DAO层泛型基类实现
+ * @Description: DAO层泛型基类实现(使用hibernate中的sessionFactory机制)
  * @author LiuYu   
  * @date 2014-6-20 上午12:02:37 
  *    
