@@ -27,7 +27,7 @@ public class MiniDaoUtil {
 	/**
 	 * 分页sql
 	 */
-	public static final String MYSQL_SQL = "select *　from ({0}) sel_tab00 limit {1}, {2}";
+	public static final String MYSQL_SQL = "select * from ({0}) sel_tab00 limit {1}, {2}";
 	public static final String ORACLE_SQL = "select * from (select row_.*, rownum rownum_ from ({0}) row_ where rownum <= {1}) where rownum_ > {2}";
 	public static final String POSTGRE_SQL = "select * from ({0}) sel_tab00 limit {2} offset {1}";
 	public static final String SQLSERVER_SQL = "select * from ( select row_number() over(order by tempColumn) tempRowNumber, * from (select top {1} tempColumn = 0, {0}) t ) tt where tempRowNumber > {2}";

@@ -15,7 +15,7 @@ public class MiniDaoConstants {
 	 * 删除：delete remove
 	 * 检索以上个单词之外
 	 */
-	public static final String INF_METHOD_ACTIVE = "insert, add, create, update, modify, store, delete, remove";
+	public static final String INF_METHOD_ACTIVE = "insert,add,create,update,modify,store,delete,remove";
 	public static final String INF_METHOD_BATCH = "batch";
 	
 	/**

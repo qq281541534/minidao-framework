@@ -12,7 +12,10 @@
 
   <properties>
   	<aopalliance.version>1.0</aopalliance.version>
+  	<cglib.version>2.2</cglib.version>
   	<spring.version>3.1.1.RELEASE</spring.version>
+  	<aspectj.version>1.6.9</aspectj.version>
+  	<batik.version>1.7-201003011305</batik.version>
   	<log4j.version>1.2.16</log4j.version>
   	<hibernate.common.annotations.version>4.0.1.Final</hibernate.common.annotations.version>
 	<hibernate-core.version>4.2.3.Final</hibernate-core.version>
@@ -28,6 +31,51 @@
 	<commons-beanutils.version>1.7.0</commons-beanutils.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
+
+  <repositories>
+		<repository>
+			<id>central</id>
+			<name>Central Repository</name>
+			<url>http://repo.maven.apache.org/maven2</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>oschina-maven</id>
+			<name>com.springsource.org.junit</name>
+			<url>http://maven.oschina.net/content/groups/public/</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+
+		<repository>
+			<id>spy</id>
+			<name>Spy Repository</name>
+			<url>http://files.couchbase.com/maven2/</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>xerces</id>
+			<name>xerces</name>
+			<url>https://xerces.apache.org/xerces2-j/</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>proxool</id>
+			<name>proxool</name>
+			<url>http://proxool.cvs.sourceforge.net/viewvc/proxool/</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
 
   <dependencies>
     
@@ -167,6 +215,24 @@
 		</exclusions>
 	</dependency>
 	
+	<!-- batink -->
+	<dependency>
+		<groupId>com.kenai.nbpwr</groupId>
+		<artifactId>org-apache-batik-all</artifactId>
+		<version>${batik.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.aspectj</groupId>
+		<artifactId>aspectjrt</artifactId>
+		<version>${aspectj.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.aspectj</groupId>
+		<artifactId>aspectjweaver</artifactId>
+		<version>${aspectj.version}</version>
+		<scope>runtime</scope>
+	</dependency>
+	
 	
 	<!-- freemarker -->
 	<dependency>
@@ -180,6 +246,13 @@
 		<groupId>opensymphony</groupId>
 		<artifactId>ognl</artifactId>
 		<version>${ognl.version}</version>
+	</dependency>
+	
+	<!-- cglib -->
+	<dependency>
+		<groupId>cglib</groupId>
+		<artifactId>cglib-nodep</artifactId>
+		<version>${cglib.version}</version>
 	</dependency>
     
   </dependencies>

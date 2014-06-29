@@ -19,19 +19,21 @@ import org.springframework.jdbc.support.JdbcUtils;
 public class MiniColumnOriginalMapRowMapper implements RowMapper<Map<String, Object>> {
 
 	
+	public MiniColumnOriginalMapRowMapper() {
+	}
+	
 	public Map<String, Object> mapRow(ResultSet rs, int rowNum) throws SQLException {
 		
 		ResultSetMetaData rsmd = rs.getMetaData();
 		int columnCount = rsmd.getColumnCount();
 		Map<String, Object> mapOfColValues = new LinkedMap(columnCount);
-		for(int i = 0; i <= columnCount; i++){
+		for(int i = 1; i <= columnCount; i++){
 			String key = JdbcUtils.lookupColumnName(rsmd, i);
 			Object obj = JdbcUtils.getResultSetValue(rs, i);
 			mapOfColValues.put(key, obj);
 		}
 		return mapOfColValues;
 	}
-
 }
 
 

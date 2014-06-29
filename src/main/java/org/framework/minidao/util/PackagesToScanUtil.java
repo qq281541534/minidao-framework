@@ -50,7 +50,7 @@ public class PackagesToScanUtil {
 					packArr[i] = packArr[i].replace(SUB_PACKAGE_SCREEN__SUFFIX.substring(1), "");
 				}
 			} else {
-				pack = pack.replace(SUB_PACKAGE_SCREEN__SUFFIX.substring(1), "");
+				pack = pack.replace(SUB_PACKAGE_SCREEN__SUFFIX, "");
 			}
 			recursive = true;
 		}

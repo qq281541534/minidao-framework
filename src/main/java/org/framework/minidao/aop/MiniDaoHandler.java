@@ -145,11 +145,11 @@ public class MiniDaoHandler implements MethodInterceptor {
 			//判断returnType对象是否是一个基本类型（boolean、byte、char、short、int、long、float、double和void）
 			if(returnType.isPrimitive()){
 				Number number = jdbcTemplate2.queryForObject(executeSql, BigDecimal.class);
-				if("int".equals(returnType)){
+				if("int".equals(returnType.toString())){
 					return number.intValue();
-				} else if("long".equals(returnType)){
+				} else if("long".equals(returnType.toString())){
 					return number.longValue();
-				} else if("double".equals(returnType)){
+				} else if("double".equals(returnType.toString())){
 					return number.doubleValue();
 				}
 			} 
@@ -335,7 +335,8 @@ public class MiniDaoHandler implements MethodInterceptor {
 		String regEx = ":[ tnx0Bfr]*[0-9a-z.A-Z]+";
 		Pattern pattern = Pattern.compile(regEx);
 		Matcher m = pattern.matcher(executeSql);
-		if(m.find()){
+		while(m.find()){
+			log.debug(" Match [" + m.group() +"] at positions " + m.start() + "-" + (m.end() - 1));
 			String ognl_key = m.group().replace(":", "").trim();
 			map.put(ognl_key, Ognl.getValue(ognl_key, sqlParamsMap));
 		}

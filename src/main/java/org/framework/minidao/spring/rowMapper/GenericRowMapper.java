@@ -40,7 +40,7 @@ public class GenericRowMapper<T> implements RowMapper<T> {
 			ConvertUtils.register(new BigDecimalConverter(), BigDecimal.class);
 			ConvertUtils.register(new IntegerConverter(), Integer.class);
 			
-			for(int i = 0; i <= columnCount; i++){
+			for(int i = 1; i <= columnCount; i++){
 				String key = JdbcUtils.lookupColumnName(rsmd, i);
 				Object obj = JdbcUtils.getResultSetValue(rs, i);
 				String cameKey = CamelCaseUtils.toCamelCase(key);

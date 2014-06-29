@@ -23,7 +23,7 @@ public class MiniColumnMapRowMapper implements RowMapper<Map<String, Object>> {
 		ResultSetMetaData rsmd = rs.getMetaData();
 		int columnCount = rsmd.getColumnCount();
 		Map<String, Object> mapOfColValues = new MiniDaoLinkedMap(columnCount);
-		for(int i = 0; i <= columnCount; i++){
+		for(int i = 1; i <= columnCount; i++){
 			String key = JdbcUtils.lookupColumnName(rsmd, i);
 			Object obj = JdbcUtils.getResultSetValue(rs, i);
 			mapOfColValues.put(key, obj);

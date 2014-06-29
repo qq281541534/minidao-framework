@@ -47,7 +47,7 @@ public class MiniDaoBeanFactory implements BeanFactoryPostProcessor{
 			//循环解析传递进来的包名
 			for(String pack : packagesToScan){
 				//判断是否为空
-				if(StringUtils.isEmpty(pack)){
+				if(StringUtils.isNotEmpty(pack)){
 					//获取该包名下的所有class
 					Set<Class<?>> classSet = PackagesToScanUtil.getClasses(pack);
 					
@@ -57,11 +57,11 @@ public class MiniDaoBeanFactory implements BeanFactoryPostProcessor{
 							ProxyFactoryBean proxyFactoryBean = new ProxyFactoryBean();
 							proxyFactoryBean.setBeanFactory(beanFactory);
 							proxyFactoryBean.setInterfaces(new Class[]{miniDaoClass});
-							proxyFactoryBean.setInterceptorNames(new String[]{ "MiniDaoHandler" });
+							proxyFactoryBean.setInterceptorNames(new String[]{ "miniDaoHandler" });
 							String beanName = MiniDaoUtil.getFirstSmall(miniDaoClass.getSimpleName());
 							//如果springbean工厂中还没有包含该bean
 							if(!beanFactory.containsBean(beanName)){
-								log.info("MiniDao Interface [/"+miniDaoClass.getName()+"/] onto Spring Bean '"+beanName+"'");
+								log.info("MiniDao Interface ["+miniDaoClass.getName()+"] onto Spring Bean '"+beanName+"'");
 								//则将该bean和它的代理工厂注入到bean工厂中
 								beanFactory.registerSingleton(beanName, proxyFactoryBean);
 							}
